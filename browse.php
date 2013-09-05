@@ -736,7 +736,6 @@ if ( ! empty($_POST) ) {
 
 }
 
-
 /*****************************************************************
 * Apply pre-request code from plugins
 ******************************************************************/
@@ -1338,9 +1337,9 @@ class Request {
 		# And log if in debug mode
 		if ( DEBUG_MODE ) {
 
-			$this->cookiesReceived[] = array('name'			=> $cookieName,
-														'value'			=> $cookieValue,
-														'attributes'	=> $attr);
+			$this->cookiesReceived[] = array('name'	=> $cookieName,
+												'value'	=> $cookieValue,
+												'attributes' => $attr);
 
 		}
 
@@ -1348,6 +1347,13 @@ class Request {
 
 }
 
+/*****************************************************************
+* Fix bug that cannot display image with my environment.
+******************************************************************/
+if(in_array($URL['extension'], array('jpg','jpeg','png','gif','ico'))){
+	$toSet[BINARYTRANSFER] = 1;
+	ob_clean();
+}
 
 /*****************************************************************
 * Execute the request
