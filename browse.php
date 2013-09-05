@@ -1347,8 +1347,10 @@ class Request {
 
 }
 
+
+
 /*****************************************************************
-* Fix bug that cannot display image with my environment.
+* 修复无法显示图片的BUG.
 ******************************************************************/
 if(in_array($URL['extension'], array('jpg','jpeg','png','gif','ico'))){
 	$toSet[BINARYTRANSFER] = 1;

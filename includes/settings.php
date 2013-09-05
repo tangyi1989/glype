@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /*******************************************************************
 * Glype is copyright and trademark 2007-2013 UpsideOut, Inc. d/b/a Glype
 * and/or its licensors, successors and assigners. All rights reserved.
@@ -33,10 +33,10 @@ $CONFIG['enable_blockscript'] = false;
 
 # Theme/skin to use. This should be the name of the appropriate
 # folder inside the /themes/ folder.
-$CONFIG['theme'] = 'default';
+$CONFIG['theme'] = 'unreal';
 
 # Run plugins on these websites
-$CONFIG['plugins'] = 'facebook.com,google.com,hotmail.com,live.com,msn.com,myspace.com,twitter.com,yahoo.com,youtube.com';
+$CONFIG['plugins'] = 'youtube.com,twitter.com,yahoo.com,google.com,msn.com,hotmail.com,myspace.com,facebook.com,live.com';
 
 # Temporary directory used by the script. Many features require
 # write permission to the temporary directory. Ensure this
@@ -47,7 +47,7 @@ $CONFIG['tmp_dir'] = GLYPE_ROOT . '/tmp/';
 # reduces bandwidth usage but at the cost of increased CPU load.
 $CONFIG['gzip_return'] = false;
 
-# Warn users before browsing a secure site if on an unsecure
+# Warn users before browsing a secure site if on an insecure
 # connection. This option has no effect if your proxy is on https.
 $CONFIG['ssl_warning'] = true;
 
@@ -55,7 +55,7 @@ $CONFIG['ssl_warning'] = true;
 # properly proxied is to override the native javascript functions
 # with our own. However, this may interfere with any other
 # javascript added to the page, such as ad codes.
-$CONFIG['override_javascript'] = false;
+$CONFIG['override_javascript'] = true;
 
 # This option fetches the server load and stops the script serving
 # pages whenever the server load goes over the limit specified. Set
@@ -75,11 +75,6 @@ $CONFIG['footer_include'] = '';
 # browse.php?u=aHR0... Path info may not be available on all
 # servers.
 $CONFIG['path_info_urls'] = false;
-
-# Generate unique URLs for each visitor. This increases privacy for
-# the user but you cannot create links directly to proxied pages
-# from outside the script if this option is enabled.
-$CONFIG['unique_urls'] = false;
 
 
 /*****************************************************************
@@ -105,7 +100,7 @@ $CONFIG['enable_logging'] = false;
 
 # Enter a destination for log files. A new log file will be created
 # each day in the directory specified. The directory must be
-# writable. To protect against unauthorised access, place the log
+# writable. To protect against unauthorized access, place the log
 # folder above your webroot.
 $CONFIG['logging_destination'] = $CONFIG['tmp_dir'] . 'logs/';
 
@@ -175,7 +170,7 @@ $CONFIG['queue_transfers'] = true;
 $CONFIG['cookies_on_server'] = false;
 
 # If storing cookies on the server, specify a folder to save the
-# cookie data in. To protect against unauthorised access, place the
+# cookie data in. To protect against unauthorized access, place the
 # cookie folder above your webroot.
 $CONFIG['cookies_folder'] = $CONFIG['tmp_dir'] . 'cookies/';
 
@@ -212,8 +207,8 @@ $CONFIG['options']['encodeURL'] = array(
 $CONFIG['options']['encodePage'] = array(
 	'title'	 => 'Encrypt Page',
 	'desc'	 => 'Helps avoid filters by encrypting the page before sending it and decrypting it with javascript once received.',
-	'default' => false,
-	'force'	 => false
+	'default' => true,
+	'force'	 => true
 );
 
 $CONFIG['options']['showForm'] = array(
@@ -263,7 +258,7 @@ $CONFIG['options']['stripObjects'] = array(
 * Do not edit this section manually!
 ******************************************************************/
 
-# Settings file version for determining compatability with admin
+# Settings file version for determining compatibility with admin
 # tool.
 $CONFIG['version'] = '1.4.4';
 
