@@ -55,7 +55,7 @@ $CONFIG['ssl_warning'] = true;
 # properly proxied is to override the native javascript functions
 # with our own. However, this may interfere with any other
 # javascript added to the page, such as ad codes.
-$CONFIG['override_javascript'] = true;
+$CONFIG['override_javascript'] = false;
 
 # This option fetches the server load and stops the script serving
 # pages whenever the server load goes over the limit specified. Set
@@ -265,5 +265,3 @@ $CONFIG['version'] = '1.4.4';
 //---PRESERVE ME---
 // Anything below this line will be preserved when the admin control panel rewrites
 // the settings. Useful for storing settings that don't/can't be changed from the control panel
-
-$adminDetails['tang'] = '87db92494758df7d0f0a4f39162a48f4';

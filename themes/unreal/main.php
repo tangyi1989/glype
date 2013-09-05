@@ -201,10 +201,10 @@
 <body>
 <div id="wrapper">
   <div id="header">
-    <h1><a href="index.php">找到那些被劫持的SF.</a></h1>
+    
   </div>
   <div id="content">
-
+    <!--[error]-->
     <!--[description]-->
 
     <h2>Enter URL</h2>
